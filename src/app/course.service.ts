@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class CourseService {
   courses: string[] = ['Angular', 'React', 'Vue'];
   getCourses() {
+    console.log(this.courses);
     return this.courses;
   }
 

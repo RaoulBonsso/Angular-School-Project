@@ -61,26 +61,26 @@
     </style>
 </head>
 <body>
-  <p>Bienvenue dans Courses!</p>
-  <p>Ce cours est intitulé</p>
-  <h1>{{ courseName }}</h1>
+<p>Bienvenue dans Courses!</p>
+<p>Ce cours est intitulé</p>
+<h1>{{ courseName }}</h1>
 
-  <input [(ngModel)]="courseDescription" placeholder="Entrez la description">
-  <p>{{ courseDescription }}</p>
+<input [(ngModel)]="courseDescription" placeholder="Entrez la description">
+<p>{{ courseDescription }}</p>
 
-  <div class="button-container">
-      <button [disabled]="isDisabled" class="disabled-button">Commencer</button>
-      <button (click)="startCourse()" class="start-course-button">Commencer le cours</button>
-  </div>
+<div class="button-container">
+    <button [disabled]="isDisabled" class="disabled-button">Commencer</button>
+    <button (click)="startCourse()" class="start-course-button">Commencer le cours</button>
+</div>
 
-  <ul>
-    <li *ngFor="let course of courses">
-      <app-course-item
-        [courseName]="course"
-        (courseSelected)="onCourseSelected($event)">
-      </app-course-item>
-    </li>
-  </ul>
+<ul>
+  <li *ngFor="let course of courses">
+    <app-course-item
+      [courseName]="course"
+      (courseSelected)="onCourseSelected($event)">
+    </app-course-item>
+  </li>
+</ul>
 </body>
 </html>
 
