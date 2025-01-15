@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CourseService } from '../course.service';
 
 @Component({
   selector: 'app-courses',
@@ -9,13 +10,18 @@ export class CoursesComponent {
   courseName = "Angular Avancé";
   isDisabled = true;
   courseDescription = '';
+  courses: string[];
 
   startCourse(){
     console.log("Début du cours :", this.courseName);
     this.isDisabled = false;
   }
+  constructor(private courseService: CourseService) {
+    this.courses = this.courseService.getCourses();
+  }
 
-  courses: string[] = ['Angular', 'React', 'Vue'];
-
+  onCourseSelected(courseName: string) {
+    console.log('Cours sélectionné:', courseName);
+  }
 
 }
